@@ -1,0 +1,15 @@
+INPUTS: A B
+OUTPUTS: P Q
+GATES:
+  Y = AND(X, B)
+  X = OR(A,B)
+  Z = AND(P,X)
+  P = XOR(A,Y)
+  Q = NOT(Z)
+
+STIMULUS:
+  0  0 0
+  1  0 1
+  2  1 0
+  3  1 1
+

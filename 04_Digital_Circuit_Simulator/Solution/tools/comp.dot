@@ -1,0 +1,31 @@
+digraph G {
+  rankdir=LR;
+  node [fontname=Helvetica, fontsize=11];
+  graph [splines=true, nodesep=0.5, ranksep=0.7];
+  "sig_A" [label="A", shape=ellipse, style=filled, fillcolor="#eeeeee", penwidth=1.2];
+  "sig_B" [label="B", shape=ellipse, style=filled, fillcolor="#eeeeee", penwidth=1.2];
+  "sig_P" [label="P", shape=doublecircle, style=filled, fillcolor="#f7f7f7", penwidth=1.4];
+  "sig_Q" [label="Q", shape=doublecircle, style=filled, fillcolor="#f7f7f7", penwidth=1.4];
+  "sig_X" [label="", xlabel="X", shape=point, width=0.06, height=0.06, penwidth=1.0];
+  "sig_Y" [label="", xlabel="Y", shape=point, width=0.06, height=0.06, penwidth=1.0];
+  "sig_Z" [label="", xlabel="Z", shape=point, width=0.06, height=0.06, penwidth=1.0];
+  "gate_Y" [label="AND", shape=box, style="rounded,filled", fillcolor="#fffbe6", color="#444444", penwidth=2, fontsize=13, fixedsize=true, width=1.4, height=0.9];
+  "gate_X" [label="OR", shape=box, style="rounded,filled", fillcolor="#fffbe6", color="#444444", penwidth=2, fontsize=13, fixedsize=true, width=1.4, height=0.9];
+  "gate_Z" [label="AND", shape=box, style="rounded,filled", fillcolor="#fffbe6", color="#444444", penwidth=2, fontsize=13, fixedsize=true, width=1.4, height=0.9];
+  "gate_P" [label="XOR", shape=box, style="rounded,filled", fillcolor="#fffbe6", color="#444444", penwidth=2, fontsize=13, fixedsize=true, width=1.4, height=0.9];
+  "gate_Q" [label="NOT", shape=box, style="rounded,filled", fillcolor="#fffbe6", color="#444444", penwidth=2, fontsize=13, fixedsize=true, width=1.4, height=0.9];
+  "sig_X" -> "gate_Y";
+  "sig_B" -> "gate_Y";
+  "gate_Y" -> "sig_Y";
+  "sig_A" -> "gate_X";
+  "sig_B" -> "gate_X";
+  "gate_X" -> "sig_X";
+  "sig_P" -> "gate_Z";
+  "sig_X" -> "gate_Z";
+  "gate_Z" -> "sig_Z";
+  "sig_A" -> "gate_P";
+  "sig_Y" -> "gate_P";
+  "gate_P" -> "sig_P";
+  "sig_Z" -> "gate_Q";
+  "gate_Q" -> "sig_Q";
+}
